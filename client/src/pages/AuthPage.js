@@ -1,9 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import {AuthContext} from '../context/AuthContext'
 import {useHttp} from '../hooks/http.hook'
 import {useMessage} from '../hooks/message.hook'
 import {useHistory} from 'react-router-dom'
-import {AuthCard} from "../components/AuthCard";
+import {Index} from "../components/AuthCard";
 
 export const AuthPage = () => {
     const auth = useContext(AuthContext)
@@ -16,7 +16,6 @@ export const AuthPage = () => {
     const history = useHistory();
 
 
-
     useEffect(() => {
         message(error)
         clearError()
@@ -27,14 +26,15 @@ export const AuthPage = () => {
     }, [])
 
     const changeHandler = event => {
-        setForm({ ...form, [event.target.name]: event.target.value })
+        setForm({...form, [event.target.name]: event.target.value})
     }
 
     const registerHandler = async () => {
         try {
             const data = await request('/users/', 'POST', {...form})
             message(data.message)
-        } catch (e) {}
+        } catch (e) {
+        }
     }
 
     const loginHandler = async () => {
@@ -42,11 +42,12 @@ export const AuthPage = () => {
             const token = await request('/jwt/create/', 'POST', {...form})
             auth.login(token)
             history.push('/profile/detail/')
-        } catch (e) {}
+        } catch (e) {
+        }
     }
     return (
         <div>
-            <AuthCard />
+            <Index/>
         </div>
     )
 }

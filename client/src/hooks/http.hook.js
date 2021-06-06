@@ -1,4 +1,5 @@
 import {useCallback, useState} from 'react'
+import axios from 'axios'
 
 export const useHttp = () => {
     const [loading, setLoading] = useState(false)
@@ -14,18 +15,12 @@ export const useHttp = () => {
                 headers['Content-Type'] = 'text/plain;charset=UTF-8'
             }
 
-            const response = await fetch(url, {method, body, headers})
-            const data = await response.json()
-
-            // if (!response.ok) {
-            //     throw new Error(data.message || 'что то пошло не так')
-            // }
+            const response = await axios(url, method, body, headers)
 
             setLoading(false)
             if (response.status >= 200 && response.status < 300) {
-                return data
-            }
-            else {
+                return response.data
+            } else {
                 return false
             }
 

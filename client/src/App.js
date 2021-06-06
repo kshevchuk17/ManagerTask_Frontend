@@ -7,26 +7,26 @@ import {Navbar} from './components/Navbar'
 
 
 function App() {
-  const {token, login, logout, ready} = useAuth()
-  const isAuthenticated = !!token
-  const routes = useRoutes (isAuthenticated)
+    const {token, login, logout, ready} = useAuth()
+    const isAuthenticated = !!token
+    const routes = useRoutes(isAuthenticated)
 
-  // if (!ready) {
-  //   return <Loader />
-  // }
+    // if (!ready) {
+    //   return <Loader />
+    // }
 
-  return (
-      <AuthContext.Provider value={{
-        token, login, logout, isAuthenticated
-      }}>
-        <Router>
-          {isAuthenticated && <Navbar/> }
-          <div className="container">
-            {routes}
-          </div>
-        </Router>
-      </AuthContext.Provider>
-  )
+    return (
+        <AuthContext.Provider value={{
+            token, login, logout, isAuthenticated
+        }}>
+            <Router>
+                {isAuthenticated && <Navbar/>}
+                <div className="container">
+                    {routes}
+                </div>
+            </Router>
+        </AuthContext.Provider>
+    )
 }
 
 export default App;

@@ -1,27 +1,45 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import './index.scss'
 import {AuthContext} from '../../context/AuthContext'
+import {useHttp} from '../../hooks/http.hook'
+import {useMessage} from '../../hooks/message.hook'
 
-export const Index = () => {
+
+export const SignInCard = () => {
     const history = useHistory()
     const auth = useContext(AuthContext)
+    const message = useMessage()
+    const {loading, request, error, clearError} = useHttp()
+    const [form, setForm] = useState({
+        email: '', password: ''
+    })
 
-    const logoutHandler = event => {
-        event.preventDefault()
-        auth.logout()
-        history.push('/')
+    const changeHandler = event => {
+        setForm({...form, [event.target.name]: event.target.value})
     }
 
+    const loginHandler = async () => {
+        try {
+            const token = await request('/jwt/create/', 'POST', {...form})
+            auth.login(token)
+            // history.push('/profile/detail/')
+        } catch (e) {
+        }
+    }
     return (
         <div id="Login-appRoot">
             <title>ManagerTask</title>
             <div className="LoginCardLayout">
                 <div className="LoginCardLayout-card--withCaptchaNotice LoginCardLayout-card">
+                    <a className="Typography Typography--colorDarkGray1 Typography--xl Typography--h1 Typography--textAlignCenter">
+                        <h2>Task Manager</h2>
+                    </a>
                     <div className="LoginDefaultView-content">
                         <div className="AbstractThemeableRectangularButton--isEnabled AbstractThemeableRectangularButton
                             AbstractThemeableRectangularButton--xlarge SecondaryButton GoogleSignInButton--sparse
-                            GoogleSignInButton LoginDefaultView-ssoButton" role="button" tabIndex="0">
+                            GoogleSignInButton LoginDefaultView-ssoButton" role="button" tabIndex="0"
+                             onClick={history.push('')}>
                             <svg
                                 className="AbstractThemeableRectangularButton-leftIcon GoogleSignInButton-logo--sparse GoogleSignInButton-logo"
                                 viewBox="0 0 18 18">
@@ -65,7 +83,8 @@ export const Index = () => {
                                     className="Typography Typography--colorDarkGray1 Typography--s">Email address</span>
                                 <input type="text" className="TextInputBase SizedTextInput SizedTextInput--medium TextInput
                                     LoginEmailPasswordForm-emailInput"
-                                       name="e" value autoComplete="username" autoFocus services="[object Object]"/>
+                                       name="email" value={form.email} onChange={changeHandler} autoComplete="username"
+                                       autoFocus/>
                                 <span className="Typography Typography--colorDarkGray1 Typography--s">Password</span>
                                 <div>
                                     <div className="OnBlurValidatedInput">
@@ -73,24 +92,28 @@ export const Index = () => {
                                             <div className="ValidatedTextInput-inputContainer">
                                                 <input type="password" className="TextInputBase SizedTextInput
                                                     SizedTextInput--medium TextInput ValidatedTextInput-input OnBlurValidateTextInput-input
-                                                    LoginEmailPasswordForm-passwordInput" name="p" value
-                                                       autoComplete="current-password"
-                                                       services="[object Object]"/>
+                                                    LoginEmailPasswordForm-passwordInput" name="password"
+                                                       value={form.password}
+                                                       onChange={changeHandler} autoComplete="current-password"/>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            {/*Ссылка на востановление пароля*/}
+                            <a className="LoginEmailPasswordForm-forgotPassword SecondaryLink BaseLink"
+                               href="ссылка на востановление пароля">
+                                <span className="Typography Typography--s">Forgot your password?</span>
+                            </a>
                             <div className="AbstractThemeableRectangularButton--isEnabled AbstractThemeableRectangularButton
                             AbstractThemeableRectangularButton--large NuxButton LoginEmailPasswordForm-logInButton"
-                                 role="button" aria-disabled="false" tabiindex="0">Log in
+                                 role="button" aria-disabled="false" onClick={loginHandler}>Sign up
                             </div>
                         </form>
                         <div className="LoginDefaultView-signUp">
                             <span
                                 className="Typography Typography--colorDarkGray1 Typography--m">Don't have account?</span>
-                            <a className="LoginDefaultView-signUpButtonLink PrimaryLink BaseLink" href="...">Sign up</a>
+                            <a className="LoginDefaultView-signUpButtonLink PrimaryLink BaseLink" href="ссылка на регу">Sign
+                                up</a>
                         </div>
                     </div>
                 </div>

@@ -7,13 +7,9 @@ import {Navbar} from './components/Navbar'
 
 
 function App() {
-    const {token, login, logout, ready} = useAuth()
+    const {token, login, logout} = useAuth()
     const isAuthenticated = !!token
     const routes = useRoutes(isAuthenticated)
-
-    // if (!ready) {
-    //   return <Loader />
-    // }
 
     return (
         <AuthContext.Provider value={{

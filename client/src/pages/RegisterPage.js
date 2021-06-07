@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import {useHttp} from '../hooks/http.hook'
 import {useMessage} from '../hooks/message.hook'
-import {SignInCard} from "../components/AuthCard/SignInCard";
+import {SignUpCard} from "../components/SignUp/SignUpCard"
 
 export const AuthPage = () => {
     const message = useMessage()
@@ -21,7 +21,7 @@ export const AuthPage = () => {
 
     return (
         <div>
-            <SignInCard/>
+            <SignUpCard/>
         </div>
     )
 }

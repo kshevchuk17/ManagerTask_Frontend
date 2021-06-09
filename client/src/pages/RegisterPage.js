@@ -3,7 +3,7 @@ import {useHttp} from '../hooks/http.hook'
 import {useMessage} from '../hooks/message.hook'
 import {SignUpCard} from "../components/SignUp/SignUpCard"
 
-export const AuthPage = () => {
+export const RegisterPage = () => {
     const message = useMessage()
     const {error, clearError} = useHttp()
 

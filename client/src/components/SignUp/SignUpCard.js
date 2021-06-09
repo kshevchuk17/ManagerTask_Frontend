@@ -1,6 +1,6 @@
 import React, {useContext, useState} from 'react'
 import {useHistory} from 'react-router-dom'
-import './index.scss'
+import './style.scss'
 import {AuthContext} from '../../context/AuthContext'
 import {useHttp} from '../../hooks/http.hook'
 import {useMessage} from '../../hooks/message.hook'
@@ -12,7 +12,7 @@ export const SignUpCard = () => {
     const message = useMessage()
     const {loading, request, error, clearError} = useHttp()
     const [form, setForm] = useState({
-        email: '', password: ''
+        username: '', password: ''
     })
 
     const changeHandler = event => {
@@ -21,46 +21,36 @@ export const SignUpCard = () => {
 
     const registerHandler = async () => {
         try {
-            const data = await request('/users/', 'POST', {...form})
+            const data = await request('/users/', 'post', {...form})
             message(data.message)
         } catch (e) {
+            console.log(e)
         }
     }
 
     return (
         <div id="Login-appRoot">
             <title>ManagerTask</title>
-            <div className="LoginCardLayout">
-                <div className="LoginCardLayout-card--withCaptchaNotice LoginCardLayout-card">
-                    <a className="Typography Typography--colorDarkGray1 Typography--xl Typography--h1 Typography--textAlignCenter">
-                        <h2>Task sManager</h2>
+            <div className="SignUpCardLayout">
+                <div className="SignUpCardLayout_card">
+                    <a className="Title">
+                        <h2>Tasks Manager</h2>
                     </a>
-                    <div className="LoginDefaultView-content">
-                        <form className="LoginEmailPasswordForm">
-                            <div className="LoginEmailPasswordForm-emailAndPassword">
+                    <div className="SignUpDefaultView">
+                        <form className="SignUpEmailPasswordForm">
+                            <div className="SignUpEmailPasswordForm_emailAndPassword">
                                 <span
-                                    className="Typography Typography--colorDarkGray1 Typography--s">Email address</span>
-                                <input type="text" className="TextInputBase SizedTextInput SizedTextInput--medium TextInput
-                                    LoginEmailPasswordForm-emailInput"
-                                       name="email" value={form.email} onChange={changeHandler} autoComplete="username"
+                                    className="PasswordAndEmailLabel">Email address</span>
+                                <input type="text" className="InputEmailAndPassword"
+                                       name="username" value={form.username} onChange={changeHandler} autoComplete="username"
                                        autoFocus/>
-                                <span className="Typography Typography--colorDarkGray1 Typography--s">Password</span>
-                                <div>
-                                    <div className="OnBlurValidatedInput">
-                                        <div className="ValidatedTextInput">
-                                            <div className="ValidatedTextInput-inputContainer">
-                                                <input type="password" className="TextInputBase SizedTextInput
-                                                    SizedTextInput--medium TextInput ValidatedTextInput-input OnBlurValidateTextInput-input
-                                                    LoginEmailPasswordForm-passwordInput" name="password"
-                                                       value={form.password}
-                                                       onChange={changeHandler} autoComplete="current-password"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <span className="PasswordAndEmailLabel">Password</span>
+                                <input type="password" className="InputEmailAndPassword" name="password"
+                                       value={form.password}
+                                       onChange={changeHandler} autoComplete="current-password"
+                                />
                             </div>
-                            <div className="AbstractThemeableRectangularButton--isEnabled AbstractThemeableRectangularButton
-                            AbstractThemeableRectangularButton--large NuxButton LoginEmailPasswordForm-logInButton"
+                            <div className="SignUpButton"
                                  role="button" aria-disabled="false" onClick={registerHandler}>Sign Up
                             </div>
                         </form>

@@ -1,7 +1,11 @@
 import React, {useEffect} from 'react'
 import {useHttp} from '../hooks/http.hook'
 import {useMessage} from '../hooks/message.hook'
-import {SignInCard} from "../components/AuthCard/SignInCard";
+import {SignInCard} from "../components/SignIn/SignInCard";
+import {SignUpCard} from "../components/SignUp/SignUpCard";
+
+import {Navbar} from "../components/Navbar/Navbar";
+import {Navigation} from "../components/Navigation/Navigation";
 
 export const AuthPage = () => {
     const message = useMessage()
@@ -13,14 +17,10 @@ export const AuthPage = () => {
         clearError()
     }, [error, message, clearError])
 
-    // const logoutHandler = event => {
-    //     event.preventDefault()
-    //     auth.logout()
-    //     history.push('/')
-    // }
-
     return (
         <div>
+            {/*<Navbar/>*/}
+            {/*<Navigation/>*/}
             <SignInCard/>
         </div>
     )

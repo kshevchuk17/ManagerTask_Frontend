@@ -1,0 +1,111 @@
+.TaskManager_Sidebar {
+  display: flex;
+  height: 100%;
+  position: fixed;
+  flex: 0 0 auto;
+  flex-direction: column;
+  transition: margin-left 250ms ease-out, transform 250ms ease-out;
+  width: 240px
+}
+
+.Sidebar {
+  background-color: #151b26;
+  display: flex;
+  flex-direction: column;
+
+  flex: 1 1 auto;
+  min-height: 1px
+}
+
+.SidebarHeader {
+  align-items: center;
+  display: flex;
+  height: 140px;
+  justify-content: space-between
+}
+
+.SidebarHeader_logo {
+  background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/disp/22a3ab16269821.562a8602153f7.png");
+  background-position: 16px 0;
+  background-repeat: no-repeat;
+  background-size: 60px 60px;
+  flex-grow: 1;
+  height: 60px
+}
+
+.SidebarHeader_LinkIcon {
+  cursor: pointer;
+  fill: #cbd4db;
+  flex-grow: 0;
+  margin-right: 16px;
+  padding: 0 8px;
+  height: 16px;
+  color: #6f7782;
+  font-size: large;
+}
+
+.LinksList {
+  flex: 1 1 auto;
+  min-height: 1px;
+  width: 100%;
+
+  will-change: transform;
+
+  min-height: 1px;
+}
+
+.LinksList_content {
+  box-sizing: border-box;
+  min-height: 100%;
+  padding: 1px 0;
+  position: relative;
+
+  padding-bottom: 80px
+}
+
+.LinksList_element {
+  border-bottom: 1px solid #273240;
+
+  color: #6f7782;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  height: 80px;
+  padding: 0 24px 0 24px;
+  width: 100%;
+
+  &:hover {
+    color: #9ca6af
+  }
+}
+
+.LinksList_element_name {
+  padding-right: 24px
+}
+
+.LogoutContainer {
+  border-top: 1px solid #273240;
+  display: flex;
+  height: 56px;
+  justify-content: center;
+  text-align: center;
+}
+
+.LogoutButton {
+  align-items: center;
+  box-sizing: border-box;
+  display: inline-flex;
+  transition-duration: .2s;
+  transition-property: background, border, box-shadow, color, fill;
+  padding: 0 24px;
+  color: #6f7782;
+  width: 100%;
+
+  &:hover {
+    color: #9ca6af
+  }
+}
+

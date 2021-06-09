@@ -1,0 +1,220 @@
+.SignInCardLayout {
+  align-items: center;
+  background: #f6f8f9;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.SignInCardLayout_card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px 0 rgba(21, 27, 38, 0.08);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 80px;
+  max-width: 440px;
+  padding: 24px 48px 48px;
+  width: calc(100% - 16px);
+  padding-bottom: 32px;
+}
+
+.Title {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #6f7782;
+  font-size: 34px;
+  line-height: 42px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.SignInDefaultView {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.GoogleAuthButton {
+  align-items: center;
+  border: 1px solid;
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: inline-flex;
+  flex-shrink: 0;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: .2s;
+  transition-property: background, border, box-shadow, color, fill;
+
+  cursor: pointer;
+
+  font-size: 16px;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 16px;
+
+  background: #fff;
+  border-color: #cbd4db;
+  color: #6f7782;
+  fill: #6f7782;
+
+  position: relative;
+
+  align-self: stretch;
+  margin-bottom: 32px;
+}
+
+.SeparatorRow {
+  align-items: center;
+  display: flex;
+  text-align: center;
+}
+
+.SeparatorRow_horizontalLine {
+  border-top: 1px solid #e8ecee;
+  flex: 1 1 auto;
+  margin-top: 8px;
+  min-width: 1px;
+  padding-top: 8px;
+}
+
+.SeparatorRow_label {
+  color: #6f7782;
+  margin: 0 8px;
+}
+
+.SignInEmailPasswordForm {
+  display: flex;
+  flex-direction: column;
+}
+.SignInEmailPasswordForm_emailAndPassword {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.PasswordAndEmailLabel {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #6f7782;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.ValidTextInput {
+  flex: 1 1 auto;
+  min-width: 1px;
+  position: relative;
+}
+
+.ValidTextInput_inputContainer {
+  position: relative;
+}
+
+.InputEmailAndPassword {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  background-color: #fff;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #cbd4db;
+  border-radius: 6px;
+  padding: 0 12px;
+  box-sizing: border-box;
+
+  height: 36px;
+  padding-bottom: 4px;
+  padding-top: 4px;
+
+  margin-bottom: 16px;
+  margin-top: 8px;
+
+  &:focus-visible {
+    border-color: #6a696a;
+    outline: none;
+  }
+}
+
+.ForgotYourPassword {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.Secondary_link {
+  cursor: pointer;
+  color: #6f7782;
+  fill: #6f7782;
+  text-decoration: underline;
+  -webkit-text-decoration-style: solid;
+  text-decoration-style: solid
+}
+
+.SignInButton {
+  align-items: center;
+  border: 1px solid;
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: inline-flex;
+  flex-shrink: 0;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: .2s;
+  transition-property: background, border, box-shadow, color, fill;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  cursor: pointer;
+
+  font-size: 14px;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 12px;
+
+  align-self: stretch;
+  margin-top: 32px;
+
+  background: #796eff;
+  color: #fff;
+  fill: #fff;
+  border-color: #635ac7;
+
+}
+
+.SignUpDefaultView {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.DontHaveAnyAccount {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  color: #6f7782;
+
+  font-size: 14px;
+  line-height: 22px;
+
+}
+
+.SignUpButtonLink {
+  margin-left: 8px;
+
+  cursor: pointer;
+  color: #796eff;
+  fill: #14aaf5;
+}
+
+.GoogleSignInButton-logoQ {
+  flex: 0 0 auto;
+  height: 18px;
+  width: 18px;
+  margin-right: 4px;
+  display: flex;
+}

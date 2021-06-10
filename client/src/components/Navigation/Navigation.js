@@ -14,47 +14,44 @@ export const Navigation = () => {
     }
 
     return (
-        <>
-            <div id="asana_sidebar" className="TaskManager_Sidebar">
-                <div className="Sidebar">
-                    <div className="SidebarHeader">
-                        <a aria-label="Task Manager"
-                           className="SidebarHeader_logo"
-                           href=""/>
-                        <button className="SidebarHeader_LinkIcon" aria-label="Hide sidebar">
-                            Task Manager
-                        </button>
+        <div id="asana_sidebar" className="TaskManager_Sidebar">
+            <div className="Sidebar">
+                <div className="SidebarHeader">
+                    <a className="SidebarHeader_logo" href="/home/"/>
+                    <div className="SidebarHeader_LinkIcon">
+                        Task Manager
                     </div>
-                    <div className="LinksList">
-                        <div className="LinksList_content">
-                            <button className="LinksList_element"
-                                    aria-expanded="false"><span
-                                className="LinksList_element_name">Home</span>
-                            </button>
-                            <button className="LinksList_element"
-                                    aria-expanded="false"><span
-                                className="LinksList_element_name">MyTasks</span>
-                            </button>
-                            <button className="LinksList_element"
-                                    aria-expanded="false"><span
-                                className="LinksList_element_name">Projects</span>
-                            </button>
-                            <button className="LinksList_element"
-                                    aria-expanded="false"><span
-                                className="LinksList_element_name">Teams</span>
-                            </button>
-                        </div>
+                </div>
+                <div className="LinksList">
+                    <div className="LinksList_content">
+                        <a className="LinksList_element" href="/home/">
+                            <span className="LinksList_element_name">
+                                Home
+                            </span>
+                        </a>
+                        <a className="LinksList_element" href="/my_tasks/">
+                            <span className="LinksList_element_name">
+                                MyTasks
+                            </span>
+                        </a>
+                        <a className="LinksList_element" href="/projects/">
+                            <span className="LinksList_element_name">
+                                Projects
+                            </span>
+                        </a>
+                        <a className="LinksList_element" href="/teams/">
+                            <span className="LinksList_element_name">
+                                Teams
+                            </span>
+                        </a>
                     </div>
-                    <div className="LogoutContainer">
-                        <div
-                            className="LogoutButton"
-                            role="button" onClick={logoutHandler}
-                        >
-                            Log out
-                        </div>
+                </div>
+                <div className="LogoutContainer">
+                    <div className="LogoutButton" role="button" onClick={logoutHandler}>
+                        Log out
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }

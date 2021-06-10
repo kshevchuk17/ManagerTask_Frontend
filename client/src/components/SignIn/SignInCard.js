@@ -23,7 +23,7 @@ export const SignInCard = () => {
         try {
             const token = await request('/jwt/create/', 'post', {...form})
             auth.login(token)
-            // history.push('/projects/all/')
+            history.push('/home/')
         } catch (e) {
         }
     }

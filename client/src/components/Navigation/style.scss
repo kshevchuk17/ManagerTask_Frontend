@@ -1,11 +1,10 @@
 .TaskManager_Sidebar {
   display: flex;
-  height: 100%;
-  position: fixed;
   flex: 0 0 auto;
   flex-direction: column;
   transition: margin-left 250ms ease-out, transform 250ms ease-out;
-  width: 240px
+  width: 240px;
+  z-index: 100;
 }
 
 .Sidebar {
@@ -34,7 +33,6 @@
 }
 
 .SidebarHeader_LinkIcon {
-  cursor: pointer;
   fill: #cbd4db;
   flex-grow: 0;
   margin-right: 16px;
@@ -42,6 +40,9 @@
   height: 16px;
   color: #6f7782;
   font-size: large;
+  background-color: #151b26;
+  border-width: 0;
+
 }
 
 .LinksList {
@@ -50,8 +51,6 @@
   width: 100%;
 
   will-change: transform;
-
-  min-height: 1px;
 }
 
 .LinksList_content {
@@ -59,12 +58,15 @@
   min-height: 100%;
   padding: 1px 0;
   position: relative;
+  padding-bottom: 80px;
 
-  padding-bottom: 80px
+  &:last-child {
+    border-bottom: 1px solid;
+  }
 }
 
 .LinksList_element {
-  border-bottom: 1px solid #273240;
+  border: 0 solid;
 
   color: #6f7782;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -76,6 +78,8 @@
   height: 80px;
   padding: 0 24px 0 24px;
   width: 100%;
+  background-color: #151b26;
+  //border-width: 2px;
 
   &:hover {
     color: #9ca6af

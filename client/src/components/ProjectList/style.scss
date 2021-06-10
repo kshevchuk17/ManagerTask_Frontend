@@ -1,0 +1,141 @@
+.HubTileListQ {
+  display: flex;
+  justify-content: center;
+  flex-flow: column wrap;
+  padding: 5% 50%;
+}
+
+.SortableList_itemContainer {
+  display: flex;
+  height: 100%;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  width: 750px;
+}
+
+.SortableList_sortableItemContainer {
+  flex: 0 0 auto;
+  display: inline-block;
+}
+
+.SortableList_sortableItem {
+  -webkit-user-drag: element;
+  user-select: none;
+
+}
+
+.PotTileQ {
+  margin: 40px 20px;
+  cursor: pointer;
+  display: inline-block;
+
+}
+.NewPotTile {
+  margin: 40px 20px;
+  display: block;
+}
+.TileStructureQ {
+  cursor: pointer;
+  border-radius: 30px;
+  box-sizing: border-box;
+  height: 226px;
+  min-width: 152px;
+  padding: 16px 0;
+  width: 152px;
+  align-items: center;
+  display: flex;
+  flex-flow: column;
+  position: relative;
+  transition-duration: .4s;
+  flex-flow: column;
+  cursor: pointer;
+  flex-flow: column;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.TileStructureQ:focus, .TileStructureQ:hover {
+  background: #f6f8f9;
+  transform: translate3d(0, -8px, 0);
+  outline: 0
+}
+.TileStructureQ_children {
+  height: 120px;
+  width: 120px;
+}
+
+.PotTileQ-card {
+  border-radius: 20px;
+  height: 100%;
+  width: 100%;
+  box-shadow: inset 0 -2px rgba(0, 0, 0, .05);
+  align-items: center;
+  display: flex;
+  flex-flow: column;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  background-color: rgba(26, 33, 47, 0.89);
+}
+
+.MultiColorIconQ {
+  clip-rule: evenodd;
+  fill-rule: evenodd;
+  height: 48px;
+  width: 48px;
+  transition-duration: .3s
+
+}
+
+.MultiColorIconQ_path__fadedBlack {
+  fill: rgba(21, 7, 38, 0.75);
+}
+
+.MultiColorIconQ_path__white {
+  fill: #fff
+}
+
+.TileStructureQ-name {
+  box-sizing: border-box;
+  margin-top: 8px;
+  color: #151b26;
+  font-weight: 400;
+  text-align: center;
+}
+
+.DashedTileQ {
+  height: 120px;
+  min-height: 120px;
+  min-width: 120px;
+  width: 120px;
+  stroke-dasharray: 10.0605, 5.0302;
+
+  fill: #9ca6af;
+  transition: 200ms fill, 200ms stroke
+
+}
+
+.AddItemSquircle-box .DashedTile-inner {
+  fill: #9ca6af;
+  transition: 200ms fill, 200ms stroke
+}
+
+.AddItemSquircle-box .DashedTile-outer {
+  fill: #fff;
+  stroke: #9ca6af;
+  transition: 200ms fill, 200ms stroke
+}
+
+.AddItemSquircle:hover .AddItemSquircle-box .DashedTile-inner {
+  fill: #6f7782;
+  transition: 200ms fill, 200ms stroke
+}
+
+.AddItemSquircle:hover .AddItemSquircle-box .DashedTile-outer {
+  fill: #fff;
+  stroke: #6f7782;
+  transition: 200ms fill, 200ms stroke
+}

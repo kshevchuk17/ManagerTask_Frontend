@@ -13,7 +13,7 @@ export const useHttp = () => {
                 headers['Content-Type'] = 'text/plain;charset=UTF-8'
             }
 
-            const response = await axios[method]("http://127.0.0.1:8000" + url, body, headers)
+            const response = await axios[method]("http://127.0.0.1:8000" + url, {body: body, headers: headers})
             console.log('response', response)
             setLoading(false)
             if (response.status >= 200 && response.status < 300) {

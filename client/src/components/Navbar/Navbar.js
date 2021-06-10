@@ -3,7 +3,7 @@ import {NavLink, useHistory} from 'react-router-dom'
 import {AuthContext} from '../../context/AuthContext'
 import './style.scss'
 
-export const Navbar = () => {
+export const Navbar = (props) => {
     const history = useHistory()
     const auth = useContext(AuthContext)
 
@@ -17,7 +17,7 @@ export const Navbar = () => {
         <div className="TaskManager_Topbar">
             <div className="Topbar_pageHeader">
                 <div className="Topbar_pageHeader_elements">
-                    <h1 className="PageName">Home</h1>
+                    <div className="PageName">{props.title}</div>
                 </div>
             </div>
         </div>

@@ -1,11 +1,13 @@
 import React, {useEffect} from 'react'
 import {useHttp} from '../hooks/http.hook'
 import {useMessage} from '../hooks/message.hook'
-import {SignUpCard} from "../components/SignUp/SignUpCard"
 
-export const RegisterPage = () => {
+import {Navbar} from "../components/Navbar/Navbar";
+import {Navigation} from "../components/Navigation/Navigation";
+
+export const HomePage = (props) => {
     const message = useMessage()
-    const {error, clearError} = useHttp()
+    const {loading, request, error, clearError} = useHttp()
 
 
     useEffect(() => {
@@ -15,7 +17,7 @@ export const RegisterPage = () => {
 
     return (
         <div>
-            <SignUpCard/>
+            <Navbar title={'Home'}/>
         </div>
     )
 }
